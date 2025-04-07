@@ -246,7 +246,8 @@ int main(int argc,char** argv){
 
     /// Applying Monte-Carlo (warm-up+extraction)
     int number_iterations=10;
-    s_field.all_spins_flipped_Metropolis(number_iterations);    
+    s_field.all_spins_flipped_Metropolis(number_iterations); 
+    ---> qua dovrebbe essere fatta una media sulle diverse estrazioni
     s_field.all_spins_flipped_Metropolis(number_iterations);
     s_field.pull_G_matrix();
 
