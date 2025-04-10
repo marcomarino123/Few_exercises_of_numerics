@@ -55,7 +55,15 @@ public:
 	int pull_cols(){
 		return n;
 	};
-	/// LU decomposition 
+	/// LU decomposition
+	void LU_decomposition(int init_m,int init_n,Eigen::MatrixXd init_mat,Eigen::MatrixXd init_b){
+		if(init_m==init_n){
+
+			
+		}
+
+
+	};
 	void LU_decomposition_Eigen_routine(int init_m,int init_n,Eigen::MatrixXd init_mat,Eigen::MatrixXd init_b){
 		if(init_m==init_n){
 			Eigen::FullPivLU<Eigen::MatrixXd> lu(init_mat);

@@ -71,15 +71,15 @@ public:
 	};
 	double interval_bisection_wolfe_condition(double a,double b,double c,const double acc,int *iter,double dm0,double dml,int numb_tries){
 		std::cout<<a<<" "<<b<<" "<<c<<" "<<acc<<" "<<*iter<<std::endl;
-		if(std::abs(c-a)<acc){
-			return a;
-		}else{
-			if(*iter!=0){
-				if(func(b))
-				IMPLEMENTARE WOLFE CONDITIONS
-
-			}
-		}
+		///if(std::abs(c-a)<acc){
+		///	return a;
+		///}else{
+		///	if(*iter!=0){
+		///		if(func(b))
+		///		IMPLEMENTARE WOLFE CONDITIONS
+///
+		///	}
+		///}
 		if(*iter==0){
 			do{
 			std::random_device seed;
@@ -329,46 +329,46 @@ class Minimization_nd{
 		};	
 	};
 
-int main(int argc,char** argv){	
-	///Minimization_1d minimization(test_function_1);
-	///double acc=0.001;
-	///int *iter; iter=new int; *iter=0;
-	///std::cout<<minimization.interval_bisection(-1.0,0.0,1.0,acc,iter)<<std::endl;
-	///////std::cout<<minimization.parabolic(0.0,0.0,1.0,acc,iter)<<std::endl;
-	/////*iter=0;
-	/////double step_diff=0.0001;
-	//////std::cout<<minimization.Newton(0.0,0.0,1.0,acc,iter,step_diff)<<std::endl;
-	
-	
-	
-	int dim=2;
-	///it is better to express the n-dimensional functions explicitly in order to avoid error messages
-	Minimization_nd minimization(test_function_n,dim);
-	Eigen::VectorXd a(dim);
-	Eigen::VectorXd b(dim);
-	Eigen::VectorXd c(dim);
-	for(int i=0;i<dim;i++)
-		c(i)=1.0;
-	a.setZero();
-	Eigen::VectorXd previousb(dim);
-	double step_diff=1.0e-6;
-	double acc=0.001;
-	int iter=0;
-	///First Routine
-	///std::cout<<minimization.powell_process(a,b,c,previousb,acc,&iter,dim,step_diff)<<std::endl;
-	
-	////CHECK IF IN THE GRADIENT METHOD, THE VERSOR HAS TO BE CONSIDERED...
-
-	///Second Routine
-	///in dim=3 this routine can have memory problems....
-	///std::cout<<minimization.gradient_method(a,b,c,acc,&iter,step_diff)<<std::endl;
-
-	///Third Routine
-	std::cout<<minimization.conjugate_gradient_method(a,b,c,acc,&iter,step_diff)<<std::endl;
-	return 1;
-};
-
-
-
+///int main(int argc,char** argv){	
+///	///Minimization_1d minimization(test_function_1);
+///	///double acc=0.001;
+///	///int *iter; iter=new int; *iter=0;
+///	///std::cout<<minimization.interval_bisection(-1.0,0.0,1.0,acc,iter)<<std::endl;
+///	///////std::cout<<minimization.parabolic(0.0,0.0,1.0,acc,iter)<<std::endl;
+///	/////*iter=0;
+///	/////double step_diff=0.0001;
+///	//////std::cout<<minimization.Newton(0.0,0.0,1.0,acc,iter,step_diff)<<std::endl;
+///	
+///	
+///	
+///	int dim=2;
+///	///it is better to express the n-dimensional functions explicitly in order to avoid error messages
+///	Minimization_nd minimization(test_function_n,dim);
+///	Eigen::VectorXd a(dim);
+///	Eigen::VectorXd b(dim);
+///	Eigen::VectorXd c(dim);
+///	for(int i=0;i<dim;i++)
+///		c(i)=1.0;
+///	a.setZero();
+///	Eigen::VectorXd previousb(dim);
+///	double step_diff=1.0e-6;
+///	double acc=0.001;
+///	int iter=0;
+///	///First Routine
+///	///std::cout<<minimization.powell_process(a,b,c,previousb,acc,&iter,dim,step_diff)<<std::endl;
+///	
+///	////CHECK IF IN THE GRADIENT METHOD, THE VERSOR HAS TO BE CONSIDERED...
+///
+///	///Second Routine
+///	///in dim=3 this routine can have memory problems....
+///	///std::cout<<minimization.gradient_method(a,b,c,acc,&iter,step_diff)<<std::endl;
+///
+///	///Third Routine
+///	std::cout<<minimization.conjugate_gradient_method(a,b,c,acc,&iter,step_diff)<<std::endl;
+///	return 1;
+///};
+///
+///
+///
 
 

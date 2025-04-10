@@ -1,0 +1,63 @@
+LINUX - INSTALLING MINICONDA (Package Manager)
+
+A Package Manager helps you:
+- Install software easily.
+- Manage dependencies without conflicts. (A package manager checks for what’s required and installs it for you)
+- Update/uninstall packages cleanly. (You can upgrade or remove packages without leaving broken pieces behind)
+- Reproduce environments across systems. (You can save the current state of your environment to a file (requirements.txt or environment.yml) and recreate it anywhere)
+
+Steps for Installing Miniconda:
+1. Download Miniconda
+   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   
+2. Install Miniconda
+   bash ~/Miniconda3-latest-Linux-x86_64.sh
+   ...installing (accept shell configuration)
+
+3. Close and reopen terminal
+
+Now you can create different environments (e.g., different versions of Python).
+
+Create an environment with a name:
+   conda create --name <my-env>
+   (environment location: /home/..../miniconda3/envs/<my-env>)
+   You can put your environment wherever you want.
+
+Create an environment with a specific version of Python or with a specific package:
+   conda create -n <myenv> python=3.9
+   conda create -n <myenv> scipy
+
+Create an environment with specific packages:
+   conda create --prefix <myenv> jupyterlab=3.2 matplotlib=3.5 numpy=1.21
+
+Activate the environment:
+   conda activate <myenv>
+
+Listing your environments:
+   conda env list
+
+Listing packages in an environment:
+   conda list -n <myenv>
+
+Exit an environment:
+   conda deactivate
+
+Difference between pip + venv and conda:
+- pip + venv creates isolated environments with different Python libraries but the same Python version, while conda let you manage both libraries and different Python versions (plus non-Python dependencies)
+- pip + venv cannot manage non-Python packages directly.
+- pip + venv is specifically designed for installing and managing Python packages from the Python Package Index (PyPI). It can only handle Python-based dependencies and libraries.
+
+Creating different pip + venv environments inside a conda environment:
+1. Create a venv environment:
+   python -m venv <myenvpy>
+
+2. Activate the venv environment:
+   source <myenvpy>/bin/activate
+
+3. Upgrade pip and install packages:
+   pip install --upgrade pip
+   pip install mako numpy scipy cython mpi4py....
+You are installing these Python packages inside the venv environment.
+
+Now you have your Python and its libraries properly installed, and you can use it by running:
+python program.py

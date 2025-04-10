@@ -59,8 +59,7 @@ class Poisson_1d{
 			///indicate a smartest intervall
 			double min=y_phi_alpha(minimization_1d.interval_bisection(-100,0,100,acc,&iter_1d));
 			return y_phi.row(1);
-		};
-		
+		};	
 };
 
 
