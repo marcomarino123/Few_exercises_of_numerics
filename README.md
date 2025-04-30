@@ -1,1 +1,1 @@
-Few exercises for the course of computational physics
+Few exercises for the course of Computational Physics
